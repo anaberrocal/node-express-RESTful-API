@@ -31,4 +31,17 @@ router.get("/:plantId", (req, res, next) => {
   }
 });
 
+router.patch('/:plantId', (req, res, next) => {
+    res.status(200).json({
+        code: "noice",
+        message: "Updated plant"
+    })
+});
+
+router.delete('/:plantId', (req, res, next) => {
+    res.status(200).json({
+        code: "noice",
+        message: "Deleted the plant :("
+    })
+})
 module.exports = router;
