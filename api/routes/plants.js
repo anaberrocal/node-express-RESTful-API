@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  res.status(200).json({
+  res.status(201).json({
     code: "noice",
     message: "Creating the plansts you requested...",
   });
