@@ -11,4 +11,19 @@ app.use(morgan('dev'));
 app.use('/plants', plantRoutes);
 app.use('/orders', ordersRoutes);
 
+app.use((req, res, next) => {
+    const error = new Error('Nada');
+    error.status(404);
+    next(error);
+})
+
+app.use((error, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({
+        error: {
+            message: error.message
+        }
+    })
+})
+
 module.exports = app;
